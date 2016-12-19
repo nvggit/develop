@@ -1,0 +1,60 @@
+<?xml version="1.0" ?>
+<config>
+    <modules>
+        <NVG_News>
+            <version>1.0.0</version>
+        </NVG_News>
+    </modules>
+    <global>
+         <blocks>
+            <nvgnews>
+                <class>NVG_News_Block</class>
+            </nvgnews>
+         </blocks>
+         <models>
+            <nvgnews>
+                <class>NVG_News_Model</class>
+                <resourceModel>nvgnews_resource</resourceModel>
+            </nvgnews>
+            <nvgnews_resource>
+                <class>NVG_News_Model_Resource</class>
+                <entities>
+                    <nvg_news>
+                        <table>nvg_news</table>
+                    </nvg_news>
+                </entities>
+            </nvgnews_resource>
+        </models>
+        <resources>
+            <news_setup>
+                <setup>
+                    <module>NVG_News</module>
+                </setup>
+            </news_setup>
+        </resources>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <nvgnews>
+                    <file>nvg_news.xml</file>
+                </nvgnews>
+            </updates>
+        </layout>
+        <routers>
+            <nvgnews>
+                <use>standard</use>
+                <args>
+                    <module>NVG_News</module>
+                    <frontName>news</frontName>
+                </args>
+            </nvgnews>
+        </routers>
+    </frontend>
+    <admin>
+
+    </admin>
+    <defalut>
+
+    </defalut>
+</config>

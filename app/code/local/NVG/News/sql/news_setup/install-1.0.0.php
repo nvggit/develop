@@ -1,6 +1,6 @@
 <?php
-/** @var Mage_Core_Model_Resource_Setup $installer */
 $installer = $this;
+$tableNews = $installer->getTable('nvgnews/nvg_news');
 
 $installer->startSetup();
 
@@ -12,7 +12,7 @@ $table = $installer->getConnection()
         'nullable'  => false,
         'primary'   => true,
         ))
-    ->addColumn('title', Varien_Db_Ddl_Table::TYPE_VARCHAR, '500', array(
+    ->addColumn('title', Varien_Db_Ddl_Table::TYPE_TEXT, '255', array(
         'nullable'  => false,
         ))
     ->addColumn('content', Varien_Db_Ddl_Table::TYPE_TEXT, null, array(

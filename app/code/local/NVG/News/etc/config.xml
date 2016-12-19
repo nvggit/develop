@@ -5,6 +5,26 @@
             <version>1.0.0</version>
         </NVG_News>
     </modules>
+    <admin>
+        <routers>
+            <nvgnews_admin>
+                <use>admin</use>
+                <args>
+                    <module>NVG_News</module>
+                    <frontName>nvgnews_admin</frontName>
+                </args>
+            </nvgnews_admin>
+        </routers>
+    </admin>
+    <adminhtml>
+        <menu>
+            <nvgnews module="nvgnews">
+                <title>Новости</title>
+                <sort_order>77</sort_order>
+                <action>nvgnews_admin/adminhtml_news</action>
+            </nvgnews>
+        </menu>
+    </adminhtml>
     <global>
          <blocks>
             <nvgnews>
@@ -32,6 +52,11 @@
                 </setup>
             </news_setup>
         </resources>
+        <helpers>
+            <nvgnews>
+                <class>NVG_News_Helper</class>
+            </nvgnews>
+        </helpers>
     </global>
     <frontend>
         <layout>
@@ -51,9 +76,6 @@
             </nvgnews>
         </routers>
     </frontend>
-    <admin>
-
-    </admin>
     <defalut>
 
     </defalut>
